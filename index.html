@@ -1088,7 +1088,167 @@
       <p>Many financial advisors suggest that if you're curious, a small allocation (1–5% of savings) gives meaningful exposure without betting the farm. Even a small amount purchased years ago turned into significant gains for early holders.</p>
     </div>
   </div>
+
+  <!-- HOUSE PRICE IN BITCOIN -->
+  <div class="house-section reveal">
+    <div class="house-header">
+      <div>
+        <div class="section-label" style="margin-bottom:0.5rem;">🏠 The House Test</div>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.4rem); margin-bottom:0.75rem;">An average American home used to cost <em>thousands</em> of Bitcoin. Today it costs just a few.</h2>
+        <p style="color:var(--muted); font-size:0.95rem; line-height:1.75; max-width:620px;">This is the most powerful way to understand Bitcoin's rising purchasing power. The house didn't get cheaper in dollars — it got astronomically cheaper in Bitcoin. That's what a truly scarce asset does over time.</p>
+      </div>
+      <div class="house-stat-box">
+        <div class="house-stat-row">
+          <div class="house-stat">
+            <div class="house-stat-year">2010</div>
+            <div class="house-stat-btc">~150,000 BTC</div>
+            <div class="house-stat-label">per avg. US home</div>
+          </div>
+          <div class="house-stat-arrow">→</div>
+          <div class="house-stat">
+            <div class="house-stat-year">2025</div>
+            <div class="house-stat-btc" style="color:var(--gold);">~4.3 BTC</div>
+            <div class="house-stat-label">per avg. US home</div>
+          </div>
+        </div>
+        <div class="house-stat-drop">↓ 99.997% cheaper in Bitcoin terms</div>
+      </div>
+    </div>
+
+    <div class="house-chart-wrap">
+      <canvas id="houseChart" height="300"></canvas>
+    </div>
+
+    <div class="house-explainer">
+      <div class="house-exp-card">
+        <div class="house-exp-icon">📉</div>
+        <div>
+          <strong>In dollar terms</strong> — home prices have risen ~400% since 2010. Most people call that "wealth building."
+        </div>
+      </div>
+      <div class="house-exp-card">
+        <div class="house-exp-icon">₿</div>
+        <div>
+          <strong>In Bitcoin terms</strong> — that same home has fallen 99.997%. Your house didn't become more valuable. Your dollars became less valuable.
+        </div>
+      </div>
+      <div class="house-exp-card">
+        <div class="house-exp-icon">🔮</div>
+        <div>
+          <strong>Looking ahead</strong> — as Bitcoin's supply growth slows with each halving and demand grows, this trend is projected to continue. A home may cost less than 1 BTC within a decade.
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .house-section {
+    margin-top: 3.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+  }
+
+  .house-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 2.5rem;
+  }
+
+  .house-stat-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    min-width: 320px;
+    flex-shrink: 0;
+  }
+
+  .house-stat-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .house-stat { text-align: center; }
+
+  .house-stat-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+  }
+
+  .house-stat-btc {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .house-stat-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  .house-stat-arrow {
+    font-size: 1.5rem;
+    color: var(--border);
+  }
+
+  .house-stat-drop {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .house-chart-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .house-explainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .house-exp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .house-exp-card strong { color: var(--cream); }
+
+  .house-exp-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .house-header { grid-template-columns: 1fr; }
+    .house-stat-box { min-width: unset; }
+    .house-explainer { grid-template-columns: 1fr; }
+  }
+</style>
 
 <style>
   /* COMPARISON STYLES */
@@ -1346,6 +1506,50 @@
     <div class="resources-grid reveal">
       <div class="resource-category">
         <h3>📹 Watch First</h3>
+
+        <div style="font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem 0 0.4rem;border-bottom:1px solid var(--border);margin-bottom:0.25rem;">★ Start Here — Hidden Secrets of Money</div>
+
+        <a href="https://www.youtube.com/watch?v=DyV0OfU3-FU" target="_blank" class="resource-link">
+          <span class="resource-link-icon">▶</span>
+          <div class="resource-link-info">
+            <span class="resource-link-name">Ep. 1 — Currency vs. Money</span>
+            <span class="resource-link-desc">Mike Maloney travels to Ancient Egypt to explain the single most important distinction in finance. Start here — everything else builds on this.</span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=EdSq5H7awi8" target="_blank" class="resource-link">
+          <span class="resource-link-icon">▶</span>
+          <div class="resource-link-info">
+            <span class="resource-link-name">Ep. 2 — The Seven Stages of Empire</span>
+            <span class="resource-link-desc">Every great empire in history followed the same monetary pattern — and America is following it today. Eerie and eye-opening.</span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=y-IemeM-Ado" target="_blank" class="resource-link">
+          <span class="resource-link-icon">▶</span>
+          <div class="resource-link-info">
+            <span class="resource-link-name">Ep. 3 — Dollar Crisis to Golden Opportunity</span>
+            <span class="resource-link-desc">Why the US dollar is under structural threat, and how wealth cycles repeat throughout history. Filmed in Singapore.</span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=iFDe5kUUyT0" target="_blank" class="resource-link">
+          <span class="resource-link-icon">▶</span>
+          <div class="resource-link-info">
+            <span class="resource-link-name">Ep. 4 — The Biggest Scam in History</span>
+            <span class="resource-link-desc">How central banking and fractional reserve lending quietly transfers wealth from ordinary people to the elite. One of the most-shared finance videos ever made.</span>
+          </div>
+        </a>
+
+        <div style="font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;padding:0.75rem 0 0.4rem;border-bottom:1px solid var(--border);margin-bottom:0.25rem;">★ Jack Mallers — Intro to Bitcoin</div>
+
+        <a href="https://youtu.be/eZpicVbANz" target="_blank" class="resource-link">
+          <span class="resource-link-icon">▶</span>
+          <div class="resource-link-info">
+            <span class="resource-link-name">Bitcoin 101: Satoshi's Innovation</span>
+            <span class="resource-link-desc">Jack Mallers' opening keynote at Bitcoin Atlantis 2024 — a passionate, plain-English breakdown of why Bitcoin is different from everything else. One of the best intro talks ever given.</span>
+          </div>
+        </a>
+
+        <div style="font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;padding:0.75rem 0 0.4rem;border-bottom:1px solid var(--border);margin-bottom:0.25rem;">Also Worth Watching</div>
+
         <a href="https://www.youtube.com/watch?v=41JCpzvnn_0" target="_blank" class="resource-link">
           <span class="resource-link-icon">▶</span>
           <div class="resource-link-info">
@@ -1358,13 +1562,6 @@
           <div class="resource-link-info">
             <span class="resource-link-name">How Does Bitcoin Work?</span>
             <span class="resource-link-desc">ColdFusion — Clean 20-minute walkthrough of the whole system for a total beginner.</span>
-          </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=Gc2en3nHxA4" target="_blank" class="resource-link">
-          <span class="resource-link-icon">▶</span>
-          <div class="resource-link-info">
-            <span class="resource-link-name">Bitcoin: The End of Money as We Know It</span>
-            <span class="resource-link-desc">Award-winning documentary on the history of money and why Bitcoin matters.</span>
           </div>
         </a>
         <a href="https://www.youtube.com/watch?v=PakCLRnRBs0" target="_blank" class="resource-link">
@@ -1645,6 +1842,127 @@ new Chart(supplyCtx, {
         color: '#000',
         font: { family: 'DM Mono', size: 9, weight: '500' },
         textAlign: 'center',
+      }
+    }
+  }
+});
+
+// HOUSE PRICE IN BITCOIN CHART
+const houseCtx = document.getElementById('houseChart').getContext('2d');
+
+const houseYears = ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2028*','2032*'];
+const housePricesInBTC = [
+  Math.round(221000/0.08),   // 2010 — enormous, will use log scale
+  Math.round(221000/5),      // 2011 — ~44,200
+  Math.round(235000/13),     // 2012 — ~18,077
+  Math.round(245000/800),    // 2013 — ~306
+  Math.round(285000/315),    // 2014 — ~905
+  Math.round(295000/430),    // 2015 — ~686
+  Math.round(300000/960),    // 2016 — ~313
+  Math.round(310000/13000),  // 2017 — ~24
+  Math.round(320000/3200),   // 2018 — ~100
+  Math.round(310000/7200),   // 2019 — ~43
+  Math.round(340000/29000 * 10)/10, // 2020 — ~11.7
+  Math.round(380000/47000 * 10)/10, // 2021 — ~8.1
+  Math.round(400000/16500 * 10)/10, // 2022 — ~24.2
+  Math.round(410000/44000 * 10)/10, // 2023 — ~9.3
+  Math.round(420000/98000 * 10)/10, // 2024 — ~4.3
+  Math.round(460000/250000 * 100)/100, // 2028 projected — ~1.84
+  Math.round(500000/800000 * 100)/100, // 2032 projected — ~0.63
+];
+
+const houseGradient = houseCtx.createLinearGradient(0, 0, 0, 300);
+houseGradient.addColorStop(0, 'rgba(247,147,26,0.25)');
+houseGradient.addColorStop(1, 'rgba(247,147,26,0)');
+
+const houseLabelMap = {
+  0:  '2.7M BTC',
+  1:  '44,200 BTC',
+  3:  '306 BTC',
+  6:  '313 BTC',
+  7:  '24 BTC',
+  10: '11.7 BTC',
+  13: '9.3 BTC',
+  14: '4.3 BTC',
+  15: '~1.8 BTC',
+  16: '~0.6 BTC',
+};
+
+new Chart(houseCtx, {
+  type: 'line',
+  data: {
+    labels: houseYears,
+    datasets: [
+      {
+        label: 'Avg US Home Price in BTC',
+        data: housePricesInBTC,
+        borderColor: '#f7931a',
+        borderWidth: 2.5,
+        pointBackgroundColor: ctx => houseLabelMap[ctx.dataIndex] ? '#f7931a' : 'rgba(247,147,26,0.4)',
+        pointRadius: ctx => houseLabelMap[ctx.dataIndex] ? 5 : 2,
+        pointHoverRadius: 7,
+        fill: true,
+        backgroundColor: houseGradient,
+        tension: 0.3,
+        segment: {
+          borderDash: ctx => ctx.p1DataIndex >= 15 ? [6, 4] : undefined,
+          borderColor: ctx => ctx.p1DataIndex >= 15 ? 'rgba(247,147,26,0.45)' : '#f7931a',
+        }
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1a1a17',
+        borderColor: '#2a2a26',
+        borderWidth: 1,
+        titleColor: '#f7931a',
+        bodyColor: '#e8e4dc',
+        callbacks: {
+          title: ctx => houseYears[ctx[0].dataIndex] + (ctx[0].dataIndex >= 15 ? ' (projected)' : ''),
+          label: ctx => {
+            const v = ctx.parsed.y;
+            const fmt = v >= 1000 ? (v/1000).toFixed(1) + 'k' : v;
+            return ` ${fmt} BTC to buy an avg. US home`;
+          }
+        }
+      },
+      datalabels: {
+        display: ctx => !!houseLabelMap[ctx.dataIndex],
+        formatter: (val, ctx) => houseLabelMap[ctx.dataIndex],
+        color: '#f7931a',
+        font: { family: 'DM Mono', size: 9, weight: '500' },
+        align: ctx => [0, 1, 2, 3, 4, 5, 6].includes(ctx.dataIndex) ? 'bottom' : 'top',
+        offset: 5,
+        backgroundColor: 'rgba(10,10,8,0.85)',
+        borderRadius: 3,
+        padding: { top: 2, bottom: 2, left: 5, right: 5 },
+      }
+    },
+    scales: {
+      y: {
+        type: 'logarithmic',
+        grid: { color: '#1e1e1b' },
+        ticks: {
+          color: '#7a7a6e',
+          font: { family: 'DM Mono', size: 10 },
+          callback: v => {
+            if (v >= 1000000) return (v/1000000).toFixed(1) + 'M ₿';
+            if (v >= 1000) return (v/1000).toFixed(0) + 'k ₿';
+            return v + ' ₿';
+          }
+        }
+      },
+      x: {
+        grid: { color: '#1e1e1b' },
+        ticks: {
+          color: ctx => ['2028*','2032*'].includes(houseYears[ctx.index]) ? 'rgba(247,147,26,0.5)' : '#7a7a6e',
+          font: { family: 'DM Mono', size: 10 }
+        }
       }
     }
   }
